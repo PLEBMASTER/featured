@@ -8,4 +8,4 @@ if($_POST['submit']) {
 }
  
 header('Location: ');
-?> 
+?php> 
