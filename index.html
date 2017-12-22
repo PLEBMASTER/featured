@@ -23,8 +23,7 @@ p {
 <p>This is a paragraph.</p>
 
     
- <form action="/action_page.php" method="post">
-     <div>
+
          <label for="name" class="title"> Name: 
              </label>
          <input type="text" id="name" name="name" />
@@ -34,6 +33,20 @@ p {
              </label>
          <input type="text" id="email" name="email" />
              </div>
+     var $form = $('form#test-form'),
+    url = 'https://script.google.com/macros/s/abcdefghijklmnopqrstuvwxyz1234567890/exec'
+
+$('#submit-form').on('click', function(e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).success(
+    // do something
+  );
+})
 <div class="submit">
     <input type="submit" value="Register"
       id="submit" />
